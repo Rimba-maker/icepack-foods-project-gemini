@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Healthy Range Frozen | IcePack Foods"
+  description="Pilihan makanan sehat, rendah kalori, dan tinggi protein."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Healthy Range.</h1>
+      <p class="text-body text-lg mb-10">Pilihan makanan sehat, rendah kalori, dan tinggi protein.</p>
+
+      <ProductGrid client:load initialCategory="Healthy Range" />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,106 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// React Islands
+import Hero from "@components/homepage/Hero";
+import WhoWeServe from "@components/homepage/WhoWeServe";
+import ProductCategories from "@components/homepage/ProductCategories";
+import BestSellers from "@components/homepage/BestSellers";
+import WhyIcePack from "@components/homepage/WhyIcePack";
+import B2BHighlight from "@components/homepage/B2BHighlight";
+import ColdChain from "@components/homepage/ColdChain";
+import RecipeInspiration from "@components/homepage/RecipeInspiration";
+import Testimonial from "@components/homepage/Testimonial";
+import { ShoppingCart1Line, BriefcaseLine } from "@mingcute/react";
+---
+
+<BaseLayout
+  title="IcePack Foods — Frozen Food Premium, B2C & B2B Supplier"
+  description="Brand & supplier frozen food terpercaya. 500+ produk: dimsum, bakso, nugget, seafood, healthy range. Untuk dapur rumah & dapur bisnis."
+>
+  <!-- S1: Hero (client:load - critical for initial load) -->
+  <Hero client:load />
+
+  <!-- S2: Who We Serve (client:visible - hydrates on scroll) -->
+  <WhoWeServe client:visible />
+
+  <!-- S3: Product Categories -->
+  <ProductCategories client:visible />
+
+  <!-- S4: Best Sellers -->
+  <BestSellers client:visible />
+
+  <!-- S5: Why IcePack -->
+  <WhyIcePack client:visible />
+
+  <!-- S6: B2B Highlight -->
+  <B2BHighlight client:visible />
+
+  <!-- S7: Cold Chain Process -->
+  <ColdChain client:visible />
+
+  <!-- S8: Recipe Inspiration -->
+  <RecipeInspiration client:visible />
+
+  <!-- S9: Testimonial -->
+  <Testimonial client:visible />
+
+  <!-- S10: CTA Split (Static) -->
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-center mb-12">Mau Mulai Dari Mana?</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- B2C -->
+        <div class="bg-primary-soft border border-primary/10 rounded-[28px] p-8 lg:p-10 text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="mb-6 flex justify-center text-primary">
+            <ShoppingCart1Line className="w-14 h-14" />
+          </div>
+          <h3 class="text-2xl font-medium mb-3">Beli Untuk Keluarga</h3>
+          <p class="text-body mb-2">Belanja frozen food untuk stok dapur rumah. Order online, dikirim fresh & dingin.</p>
+          <p class="text-sm text-primary font-medium mb-6">Gratis ongkir &gt; Rp 200k</p>
+          <a href="/produk/" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-on-primary font-semibold rounded-full hover:bg-primary-hover transition-colors shadow-md">
+            Order Sekarang →
+          </a>
+        </div>
+
+        <!-- B2B -->
+        <div class="bg-b2b-soft border border-b2b/10 rounded-[28px] p-8 lg:p-10 text-center hover:-translate-y-2 transition-transform duration-300">
+          <div class="mb-6 flex justify-center text-b2b">
+            <BriefcaseLine className="w-14 h-14" />
+          </div>
+          <h3 class="text-2xl font-medium mb-3">Daftar Sebagai Mitra Bisnis</h3>
+          <p class="text-body mb-2">Dapatkan harga grosir, pengiriman terjadwal, dan dedicated account manager.</p>
+          <p class="text-sm text-b2b font-medium mb-6">Untuk restoran, hotel, catering, dan reseller</p>
+          <a href="/supplier/" class="inline-flex items-center gap-2 px-8 py-4 bg-b2b text-white font-semibold rounded-full hover:bg-b2b-hover transition-colors shadow-md">
+            Konsultasi B2B →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Organization & LocalBusiness Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://icepackfoods.id/#organization",
+        "name": "IcePack Foods",
+        "url": "https://icepackfoods.id",
+        "logo": "https://icepackfoods.id/logo.png"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://icepackfoods.id/#localbusiness",
+        "name": "IcePack Foods Supplier & Retail",
+        "image": "https://icepackfoods.id/og-default.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "ID"
+        }
+      }
+    ]
+  })} />
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Ready to Eat Frozen | IcePack Foods"
+  description="Makanan siap saji beku, tinggal panaskan 10 menit."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Ready to Eat.</h1>
+      <p class="text-body text-lg mb-10">Makanan siap saji beku, tinggal panaskan 10 menit.</p>
+
+      <ProductGrid client:load initialCategory="Ready to Eat" />
+    </div>
+  </section>
+</BaseLayout>

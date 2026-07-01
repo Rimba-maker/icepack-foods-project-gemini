@@ -1,0 +1,44 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Semua Produk Frozen Food | IcePack Foods"
+  description="Browse 500+ produk frozen food IcePack. Dimsum, bakso, nugget, seafood, sayuran, ready to eat, healthy range & dessert beku."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Semua Produk IcePack.</h1>
+      <p class="text-body text-lg mb-10">500+ produk frozen food berkualitas, dari klasik sampai healthy range.</p>
+
+      <ProductGrid client:load initialCategory="Semua" />
+    </div>
+  </section>
+
+  <!-- ItemList & Product Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Dimsum Hakau Udang Premium",
+          "offers": { "@type": "Offer", "price": "45000", "priceCurrency": "IDR" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Bakso Sapi Jumbo Super",
+          "offers": { "@type": "Offer", "price": "52000", "priceCurrency": "IDR" }
+        }
+      }
+    ]
+  })} />
+</BaseLayout>

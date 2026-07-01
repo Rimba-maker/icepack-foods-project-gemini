@@ -1,0 +1,189 @@
+/*
+ * IcePack Foods — Hybrid Design System
+ * Zapier × Mastercard × Airtable
+ *
+ * Layer 1 (Zapier): Warm cream canvas, orange CTA, coffee ink
+ * Layer 2 (Mastercard): Pill nav, circular portraits, orbital lines, stadium hero
+ * Layer 3 (Airtable): Signature category colors, pricing tiers, article cards
+ */
+
+@import "tailwindcss";
+
+/* ─── Custom Fonts ─── */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+}
+
+/* ─── Design Tokens ─── */
+@theme {
+  /* ─── Zapier Base: Warm Cream Canvas ─── */
+  --color-canvas: #fffefb;
+  --color-canvas-soft: #f8f4f0;
+  --color-ink: #201515;
+  --color-ink-soft: #2f2a26;
+  --color-body: #605d52;
+  --color-body-mid: #939084;
+  --color-mute: #c5c0b1;
+
+  /* ─── B2C Primary: Appetite Orange (Zapier) ─── */
+  --color-primary: #ff4f00;
+  --color-primary-hover: #e64500;
+  --color-primary-soft: #fff0e6;
+  --color-on-primary: #fffefb;
+
+  /* ─── B2B Accent: Navy Blue (PRD) ─── */
+  --color-b2b: #1e40af;
+  --color-b2b-hover: #1a3799;
+  --color-b2b-light: #dbeafe;
+  --color-b2b-soft: #eff6ff;
+
+  /* ─── Mastercard Signature: Burnt Orange Accents ─── */
+  --color-signal-orange: #cf4500;
+  --color-light-orange: #f37338;
+  --color-cream-lifted: #fcfbfa;
+
+  /* ─── Airtable Signature: Category Colors ─── */
+  --color-cat-bakso: #aa2d00;
+  --color-cat-bakso-light: #f5ddd4;
+  --color-cat-dimsum: #f5e9d4;
+  --color-cat-dimsum-dark: #8a7350;
+  --color-cat-seafood: #fcab79;
+  --color-cat-seafood-dark: #7a4520;
+  --color-cat-sayuran: #0a2e0e;
+  --color-cat-sayuran-light: #d4f0d9;
+  --color-cat-nugget: #d9a441;
+  --color-cat-nugget-light: #faf0d8;
+  --color-cat-dessert: #a8d8c4;
+  --color-cat-dessert-dark: #1a5c46;
+  --color-cat-sosis: #aa2d00;
+  --color-cat-western: #fcab79;
+  --color-cat-rte: #d9a441;
+  --color-cat-healthy: #0a2e0e;
+
+  /* ─── Semantic ─── */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+
+  /* ─── Surfaces ─── */
+  --color-surface: #f9fafb;
+  --color-surface-dark: #201515;
+  --color-surface-dark-elevated: #2f2a26;
+
+  /* ─── Borders ─── */
+  --color-hairline: #e5e0d8;
+  --color-hairline-soft: #f0ece6;
+  --color-hairline-strong: #c5c0b1;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 1px 2px rgba(32, 21, 21, 0.05);
+  --shadow-md: 0 4px 12px rgba(32, 21, 21, 0.08);
+  --shadow-lg: 0 12px 32px rgba(32, 21, 21, 0.1);
+  --shadow-xl: 0 24px 48px rgba(32, 21, 21, 0.08);
+  --shadow-nav: 0 4px 24px rgba(32, 21, 21, 0.04);
+
+  /* ─── Spacing (8px base, Mastercard ladder) ─── */
+  --spacing-section-sm: 48px;
+  --spacing-section: 80px;
+  --spacing-section-lg: 120px;
+  --spacing-hero: 128px;
+
+  /* ─── Border Radius (Mastercard scale) ─── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-hero: 40px;
+  --radius-pill: 9999px;
+
+  /* ─── Typography ─── */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* ─── Breakpoints ─── */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+}
+
+/* ─── Base Styles ─── */
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  line-height: 1.5;
+}
+
+/* ─── Utility: Eyebrow (Zapier uppercase labels) ─── */
+.eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ─── Utility: Mastercard Ghost Watermark ─── */
+.ghost-watermark {
+  font-size: clamp(72px, 10vw, 128px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -2%;
+  color: #f0ece6;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ─── Utility: Mastercard Orbital Line ─── */
+.orbital-line {
+  stroke: var(--color-light-orange);
+  stroke-width: 1.5px;
+  fill: none;
+}
+
+/* ─── Utility: Circular Portrait (Mastercard) ─── */
+.portrait-circle {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* ─── Utility: Stadium Frame (Mastercard Hero) ─── */
+.stadium-frame {
+  border-radius: var(--radius-hero);
+  overflow: hidden;
+}
+
+/* ─── Utility: Satellite CTA (Mastercard) ─── */
+.satellite-cta {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Category Badge Colors (Airtable Signature) ─── */
+.cat-badge-bakso { background-color: var(--color-cat-bakso); color: white; }
+.cat-badge-dimsum { background-color: var(--color-cat-dimsum); color: var(--color-ink); }
+.cat-badge-seafood { background-color: var(--color-cat-seafood); color: var(--color-ink); }
+.cat-badge-sayuran { background-color: var(--color-cat-sayuran); color: white; }
+.cat-badge-nugget { background-color: var(--color-cat-nugget); color: var(--color-ink); }
+.cat-badge-dessert { background-color: var(--color-cat-dessert); color: var(--color-ink); }

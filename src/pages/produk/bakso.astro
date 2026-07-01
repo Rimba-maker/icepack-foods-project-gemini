@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Bakso & Pentol Frozen | IcePack Foods"
+  description="Bakso sapi asli dan pentol isi, cocok untuk kuah atau goreng."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Bakso & Pentol.</h1>
+      <p class="text-body text-lg mb-10">Bakso sapi asli dan pentol isi, cocok untuk kuah atau goreng.</p>
+
+      <ProductGrid client:load initialCategory="Bakso & Pentol" />
+    </div>
+  </section>
+</BaseLayout>

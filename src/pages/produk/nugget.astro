@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Nugget & Olahan Ayam Frozen | IcePack Foods"
+  description="Nugget crispy dan olahan ayam praktis favorit keluarga."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Nugget & Olahan Ayam.</h1>
+      <p class="text-body text-lg mb-10">Nugget crispy dan olahan ayam praktis favorit keluarga.</p>
+
+      <ProductGrid client:load initialCategory="Nugget & Olahan Ayam" />
+    </div>
+  </section>
+</BaseLayout>

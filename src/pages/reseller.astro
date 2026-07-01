@@ -1,0 +1,52 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ResellerForm from "@components/forms/ResellerForm";
+---
+
+<BaseLayout
+  title="Program Reseller Frozen Food | IcePack Foods"
+  description="Jadi reseller frozen food IcePack. Margin 25-35%, support marketing, min. order 5 kg. Daftar gratis."
+>
+  <section class="bg-primary-soft border-b border-primary/10 py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-6 text-ink">
+          Jual Frozen Food Premium.<br />
+          <span class="text-primary">Profit Nyata.</span>
+        </h1>
+        <p class="text-body text-lg md:text-xl mb-10">
+          Bergabunglah dengan program reseller IcePack. Jual dari rumah atau toko, harga spesial, support marketing tersedia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-medium mb-8">Kenapa Resell IcePack?</h2>
+          <ul class="space-y-4">
+            {[
+              "Brand yang sudah dikenal di kota",
+              "Margin 25-35% dari harga eceran",
+              "Bisa mulai kecil (min. order 5 kg)",
+              "Training product knowledge gratis",
+              "Free marketing kit (foto produk, caption, template IG)",
+              "Dukungan WA grup reseller",
+            ].map((benefit) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-lg text-body">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <ResellerForm client:visible />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

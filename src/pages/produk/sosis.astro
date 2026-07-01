@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Sosis & Hotdog Frozen | IcePack Foods"
+  description="Sosis premium aneka rasa, cocok untuk bakar atau tumis."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Sosis & Hotdog.</h1>
+      <p class="text-body text-lg mb-10">Sosis premium aneka rasa, cocok untuk bakar atau tumis.</p>
+
+      <ProductGrid client:load initialCategory="Sosis & Hotdog" />
+    </div>
+  </section>
+</BaseLayout>

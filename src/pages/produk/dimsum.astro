@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Dimsum & Siomay Frozen | IcePack Foods"
+  description="Dimsum dan siomay premium, kenyal dan lezat."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Dimsum & Siomay.</h1>
+      <p class="text-body text-lg mb-10">Dimsum dan siomay premium, kenyal dan lezat.</p>
+
+      <ProductGrid client:load initialCategory="Dimsum & Siomay" />
+    </div>
+  </section>
+</BaseLayout>

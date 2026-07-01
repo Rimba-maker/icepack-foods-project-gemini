@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ProductGrid from "@components/produk/ProductGrid";
+---
+
+<BaseLayout
+  title="Western Frozen Frozen | IcePack Foods"
+  description="Pizza, pasta, dan menu ala barat praktis."
+>
+  <section class="py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-medium tracking-tight mb-3 text-ink">Western Frozen.</h1>
+      <p class="text-body text-lg mb-10">Pizza, pasta, dan menu ala barat praktis.</p>
+
+      <ProductGrid client:load initialCategory="Western Frozen" />
+    </div>
+  </section>
+</BaseLayout>

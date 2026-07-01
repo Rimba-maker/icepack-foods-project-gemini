@@ -1,0 +1,46 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { CheckCircleLine } from "@mingcute/react";
+---
+
+<BaseLayout
+  title="Tentang IcePack Foods"
+  description="Brand frozen food premium di kota. Menghadirkan produk berkualitas dari dapur produksi berstandar GMP ke meja makan keluarga."
+>
+  <section class="py-20 lg:py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-medium tracking-tight mb-8">
+        Lebih dari Sekadar Frozen Food.
+      </h1>
+      
+      <div class="prose prose-lg text-body max-w-none space-y-6">
+        <p>
+          IcePack Foods dimulai dengan satu premis sederhana: makanan beku tidak seharusnya menjadi kompromi. Ia harus sama lezatnya, sama bergizinya, dan sama amannya dengan makanan yang dimasak langsung dari bahan segar.
+        </p>
+        
+        <p>
+          Kami membangun fasilitas produksi berstandar GMP (Good Manufacturing Practice), menerapkan teknologi pembekuan cepat (IQF) yang mengunci nutrisi dan tekstur, dan membangun armada rantai dingin (cold chain) kami sendiri.
+        </p>
+        
+        <p>
+          Hari ini, IcePack melayani lebih dari 200 restoran, hotel, dan katering, serta ribuan keluarga yang menginginkan stok freezer yang bisa diandalkan kapan saja.
+        </p>
+      </div>
+
+      <hr class="my-12 border-hairline-strong" />
+
+      <h2 class="text-2xl font-medium mb-6">Area Distribusi Kami</h2>
+      <ul class="space-y-4 text-body text-lg">
+        <li class="flex items-center gap-3">
+          <CheckCircleLine className="w-6 h-6 text-primary shrink-0" /> Kota [Nama Kota] — Free delivery untuk order &gt; Rp 200k
+        </li>
+        <li class="flex items-center gap-3">
+          <CheckCircleLine className="w-6 h-6 text-primary shrink-0" /> Kabupaten sekitar — Delivery tersedia, ongkir sesuai jarak
+        </li>
+        <li class="flex items-center gap-3">
+          <CheckCircleLine className="w-6 h-6 text-b2b shrink-0" /> B2B: pengiriman ke luar kota untuk volume &gt; 50 kg
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { ShoppingCart1Line, BriefcaseLine } from "@mingcute/react";
+---
+<BaseLayout
+  title="Hubungi Kami | IcePack Foods"
+  description="Punya pertanyaan seputar produk, order, atau kerjasama B2B? Hubungi tim IcePack Foods."
+>
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-medium tracking-tight mb-4">Hubungi Kami</h1>
+        <p class="text-body text-lg">Punya pertanyaan seputar produk, order, atau kerjasama? Tim kami siap membantu.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <!-- B2C Contact -->
+        <div class="bg-canvas-soft rounded-[28px] p-8 text-center border border-hairline-soft">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+            <ShoppingCart1Line className="w-8 h-8 text-primary" />
+          </div>
+          <h2 class="text-2xl font-medium mb-2">Customer Service</h2>
+          <p class="text-body mb-6">Untuk pertanyaan seputar order eceran, ketersediaan stok, dan pengiriman.</p>
+          <a href="#" class="inline-flex px-8 py-4 bg-primary text-on-primary font-semibold rounded-full hover:bg-primary-hover transition-colors">
+            Chat WhatsApp
+          </a>
+        </div>
+
+        <!-- B2B Contact -->
+        <div class="bg-surface-dark text-white rounded-[28px] p-8 text-center">
+          <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <BriefcaseLine className="w-8 h-8 text-white" />
+          </div>
+          <h2 class="text-2xl font-medium mb-2">Partnership B2B</h2>
+          <p class="text-white/70 mb-6">Untuk restoran, hotel, reseller, dan kebutuhan supply volume besar.</p>
+          <a href="#" class="inline-flex px-8 py-4 bg-b2b text-white font-semibold rounded-full hover:bg-b2b-hover transition-colors">
+            Hubungi Sales B2B
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

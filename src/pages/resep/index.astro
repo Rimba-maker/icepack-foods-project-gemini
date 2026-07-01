@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Resep Masak dengan Frozen Food | IcePack Foods"
+  description="Inspirasi resep simpel menggunakan produk frozen food IcePack. Siap 15 menit, lezat seperti restoran."
+>
+  <section class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h1 class="text-4xl md:text-5xl font-medium tracking-tight mb-4">Mau Masak Apa Hari Ini?</h1>
+        <p class="text-body text-lg max-w-2xl mx-auto">
+          Inspirasi resep simpel pakai produk IcePack — siap 15 menit, hasilnya restoran.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { title: "Dim Sum Steamboat", use: "Hakau + Siu Mai + Fish Cake", time: "15 Min", color: "bg-cat-dimsum", text: "text-cat-dimsum-dark" },
+          { title: "Bakso Kuah Mercon", use: "Bakso Mercon + Pentol Isi", time: "20 Min", color: "bg-cat-bakso", text: "text-white" },
+          { title: "Karaage Rice Bowl", use: "Chicken Karage + Edamame", time: "10 Min", color: "bg-cat-nugget", text: "text-ink" },
+          { title: "Seafood Fried Rice", use: "Udang + Cumi + Mixed Veggies", time: "15 Min", color: "bg-cat-seafood", text: "text-ink" },
+          { title: "Rendang Singkong", use: "Rendang Beku + Singkong", time: "15 Min", color: "bg-cat-rte", text: "text-ink" },
+          { title: "Pempek Kuah Cuko", use: "Pempek Beku + Cuko", time: "10 Min", color: "bg-cat-bakso-light", text: "text-cat-bakso" },
+        ].map((recipe) => (
+          <div class="group cursor-pointer">
+            <div class={`${recipe.color} ${recipe.text} aspect-[4/3] rounded-[24px] mb-4 flex items-center justify-center text-center p-6 border border-hairline transition-transform group-hover:-translate-y-1`}>
+              <div>
+                <span class="eyebrow block mb-2 opacity-80">{recipe.time}</span>
+                <h3 class="text-2xl font-medium">{recipe.title}</h3>
+              </div>
+            </div>
+            <h4 class="font-medium text-lg mb-1">{recipe.title}</h4>
+            <p class="text-body text-sm">Pakai: {recipe.use}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
