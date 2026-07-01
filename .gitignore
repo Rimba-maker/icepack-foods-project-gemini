@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Secret Sauce Docs
+4-upgrade-icepack-foods-frozen-food-PRD.md
+AGENTS.md
+CLAUDE.md
